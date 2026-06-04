@@ -1,0 +1,13 @@
+{
+    "title": "Apple iPhone 15 (Black, 128 GB)",
+    "price": 59900,
+    "rating": {"rate":4.7, "ratings":245765, "reviews":9260},
+    "features": [
+        "128 GB ROM",
+        "15.49 cm (6.1 inch) Super Retina XDR Display",
+        "48MP + 12MP | 12MP Front Camera",
+        "A16 Bionic Chip, 6 Core Processor Processor",
+        "1 year warranty for phone and 1 year warranty for in Box Accessories."
+    ],
+    "image": "iphone-black.webp"
+}

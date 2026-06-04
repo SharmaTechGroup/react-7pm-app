@@ -1,0 +1,15 @@
+
+.text-style {
+    color:red;
+    text-align: center;
+}
+.bg-warning {
+    background-color: goldenrod;
+}
+.bg-success {
+    background-color: greenyellow;
+}
+.border-style {
+    border: 1px solid red;
+    padding: 20px;
+}
