@@ -1,11 +1,12 @@
 import { ShoppingDashboard } from "./shopping-dashboard";
-import { ShoppingProducts } from "./shopping-products";
 
 export function ShoppingIndex(){
+
+
     return(
         <div className="container-fluid row">
           <div className="col-2">
-            <div className="bi bi-bag mt-4 fw-bold fs-4"> Shopping </div>
+            <div  className="bi bi-bag mt-4 fw-bold fs-4"> Shopping </div>
             <div className="bi bi-columns-gap my-3"> All Products </div>
           </div>
           <div className="col-10">

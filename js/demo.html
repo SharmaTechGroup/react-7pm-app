@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
-     <script>
-          function Submit(e){
-                e.preventDefault();
-                alert('Data posted to server');
-          }
-     </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function GetCode(e){
+            console.log(`Key Code : ${e.keyCode}\nChar Code: ${e.charCode}`);
+        }
+    </script>
 </head>
 <body>
-    <form onsubmit="Submit(event)">
-       <input type="text" name="user"> <button>Submit</button>
-    </form>
+    <input type="text" onkeypress="GetCode(event)">
 </body>
 </html>

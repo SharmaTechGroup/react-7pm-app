@@ -5,10 +5,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
 
-import { ShoppingIndex } from './components/shopping/shopping-index.jsx';
+import { KeyDemo } from './components/key-demo/key-demo.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-     <ShoppingIndex />
+     <KeyDemo />
  
 )

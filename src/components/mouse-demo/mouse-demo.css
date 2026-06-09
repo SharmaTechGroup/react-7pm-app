@@ -1,0 +1,9 @@
+@keyframes Spin 
+{
+     from {
+        transform: rotate(0deg) scale(1) skew(0deg);
+     }
+     to {
+        transform: rotate(360deg) scale(2) skew(20deg);
+     }
+}
