@@ -6,9 +6,10 @@ import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
 
 import { ButtonDemo } from './components/button-demo/button-demo.jsx';
+import { WeatherApp } from './components/weather-app/weather-app.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-     <ButtonDemo />
+     <WeatherApp />
  
 )
