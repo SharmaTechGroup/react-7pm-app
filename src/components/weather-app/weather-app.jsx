@@ -26,11 +26,9 @@ export function WeatherApp(){
         })
     }
     useEffect(()=>{
-        window.navigator.geolocation.getCurrentPosition((position)=>{
-            axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}`)
-            .then(response=>{
-                setWeatherObj(response.data);
-            })
+       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Hyderabad&appid=${API_KEY}&units=metric`)
+        .then(response=>{
+            setWeatherObj(response.data);
         })
     },[])
 
