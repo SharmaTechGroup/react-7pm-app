@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function GetCode(e){
-            console.log(`Key Code : ${e.keyCode}\nChar Code: ${e.charCode}`);
-        }
-    </script>
 </head>
 <body>
-    <input type="text" onkeypress="GetCode(event)">
+    <form method="post">
+        User : <input type="text" name="user"> 
+        <br>
+        Age : <input type="number">
+        <br>
+         <input type="radio" name="Gender"  / > Male
+         <input type="radio" name="Gender"  / > Female
+        <button>Submit</button>
+    </form>
 </body>
 </html>

@@ -11,9 +11,11 @@ import { PropsDemo } from './components/props-demo/props-demo.jsx';
 import { ShoppingIndex } from './components/online-shopping/shopping-index.jsx';
 import { ContextDemo } from './components/context-demo/context-demo.jsx';
 import { ConditionDemo } from './components/condition-demo/condition-demo.jsx';
+import { RenderDemo } from './components/render-demo/render-demo.jsx';
+import { FormDemo } from './components/form-demo/form-demo.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-     <ConditionDemo />
+     <FormDemo />
  
 )
