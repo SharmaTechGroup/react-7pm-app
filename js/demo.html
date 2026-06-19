@@ -7,12 +7,17 @@
 </head>
 <body>
     <form method="post">
-        User : <input type="text" name="user"> 
+        User : <input type="text" required name="user"> 
         <br>
         Age : <input type="number">
         <br>
-         <input type="radio" name="Gender"  / > Male
-         <input type="radio" name="Gender"  / > Female
+         <input type="radio" required name="Gender"  / > Male
+         <input type="radio" required name="Gender"  / > Female
+         <br> 
+         <select required>
+            <option>Select City</option>
+            <option>Delhi</option>
+         </select>
         <button>Submit</button>
     </form>
 </body>
