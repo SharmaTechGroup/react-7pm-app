@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoadPage(url){
+            var http = new XMLHttpRequest();
+            http.open("get", url, true);
+            http.send();
+            http.onreadystatechange = function(){
+                if(http.readyState===4){
+                     document.querySelector("section").innerHTML = http.responseText;
+                }
+            }
+        }
+        function ProductsClick(){
+            LoadPage('products.html');
+        }
+        function UsersClick(){
+            LoadPage('users.html');
+        }
+        function bodyload(){
+            var now = new Date();
+            document.querySelector("span").innerHTML = `Page Loaded at : ${now.toLocaleTimeString()}`;
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <header>
+        <h2>Index <span></span> </h2> 
+    <a href="javascript:ProductsClick()">Products</a>
+    <span>|</span>
+    <a href="javascript:UsersClick()">Users</a>
+    </header>
+    <section>
+        
+    </section>
+</body>
+</html>

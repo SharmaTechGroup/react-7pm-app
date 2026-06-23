@@ -1,48 +1,24 @@
 import { useRef, useState } from "react"
 import { useFormik } from "formik"
+import * as yup from "yup";
 
 
 export function FormDemo(){
 
-    function ValidateUser(user){
-        let errors = {};
-
-        if(user.UserName.length===0){
-            errors.UserName = "User Name Required";
-        } else {
-            if(user.UserName.length<4){
-                errors.UserName = "Name too short";
-            }
-        }
-
-        if(user.Age===0){
-            errors.Age = "Age Required";
-        } else {
-            if(isNaN(user.Age)){
-                errors.Age = "Age must be a number";
-            }
-        }
-
-        if(user.City===''){
-            errors.City = "City Required";
-        } 
-
-        if(user.Gender===''){
-            errors.Gender = "Gender Required";
-        }
-
-
-        return errors;
-    }
     
     const formik = useFormik({
          initialValues: {
             UserName:'',
             Age:0,
             City:'',
-            Gender:''
+            Gender:'',
+            Mobile:''
          },
-         validate: ValidateUser,
+         validationSchema: yup.object({
+             UserName: yup.string().required('Name Required').min(4,'Name too short'),
+             Age: yup.number().required('Age Required').min(15,'Age min 15').max('30','Age max 30'),
+             Mobile: yup.string().required('Mobile Required').matches(/^\+91\d{10}$/,'Invalid Mobile')
+         }) ,
          onSubmit: (user)=>{
             console.log(user);
          }
@@ -55,7 +31,7 @@ export function FormDemo(){
             <form onSubmit={formik.handleSubmit}>
                 <dl>
                     <dt>User Name</dt>
-                    <dd><input type="text" onBlur={formik.handleBlur} onChange={formik.handleChange} name="UserName"  /></dd>
+                    <dd><input type="text" {...formik.getFieldProps("UserName")} name="UserName"  /></dd>
                     <dd className="text-danger">{ formik.touched.UserName && formik.errors.UserName}</dd>
                     <dt>Age</dt>
                     <dd><input type="number" onBlur={formik.handleBlur} onChange={formik.handleChange}  name="Age"  /></dd>
@@ -75,7 +51,13 @@ export function FormDemo(){
                         <input type="radio" onBlur={formik.handleBlur} onChange={formik.handleChange} name="Gender" value="Female" / > Female
                     </dd>
                     <dd className="text-danger">{formik.touched.Gender && formik.errors.Gender}</dd>
+                    <dt>Mobile</dt>
+                    <dd><input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" name="Mobile" /></dd>
+                    <dd className="text-danger">
+                        {formik.touched.Mobile && formik.errors.Mobile}
+                    </dd>
                 </dl>
+
                 <button type="submit" disabled={(formik.isValid)?false:true} >Submit</button>
                 <button className={(formik.dirty)?'d-inline':'d-none'} >Save</button>
                 
