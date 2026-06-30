@@ -17,9 +17,14 @@ import { FormikDemo } from './components/formik-demo/formik-demo.jsx';
 import { HookFormDemo } from './components/hook-form-demo/hook-form-demo.jsx';
 import { TutorialIndex } from './tutorial/tutorial-index.jsx';
 import { FakestoreIndex } from './fakestore/fakestore-index.jsx';
+import { CookiesProvider } from 'react-cookie';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/routes.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-     <FakestoreIndex />
+   
+          <RouterProvider router={router} />
+    
  
 )
